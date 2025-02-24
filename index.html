@@ -8,6 +8,8 @@
         <title>Tomatoes and Orchard Producers Association of Nigeria</title>
         <!-- custom css file link  -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
    <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,10 +18,11 @@
         }
 
         header {
-            background-color: hsl(0, 98%, 51%);
+            background-color: #D32F2F;
             color: rgb(247, 245, 245);
             padding: 0rem;
             text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         header img {
             height: 100px;
@@ -31,25 +34,135 @@
             font-weight: bolder;
     }
             
-        nav {
-            background-color: hsl(0, 98%, 51%);
-            padding: 0.5rem;
-            text-align: center;
-        }
+   /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers content */
+    background-color: #d32f2f; /* Tomato red */
+    padding: 15px 20px;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    
+}
+
+header img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 22px;
+}
+
+/* Navigation Menu */
+.menu-bar {
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.menu-bar ul li {
+    margin: 0 15px;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #d32f2f;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds spacing between icons and text */
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.menu-bar ul li a:hover {
+    color: #fff;
+    background-color: #d32f2f;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Mobile Menu Button */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background-color: #d32f2f;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .menu-bar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .menu-bar ul li {
+        margin: 0;
+        padding: 15px;
+    }
+
+    .menu-bar ul li a {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    /* Show menu when toggled */
+    .menu-bar.show ul {
+        display: flex;
+    }
+    .header-divider {
+    width: 100%;
+    height: 4px;
+    background-color:#D32F2F; 
+    margin: 10px 0;
+}
+}
          .welcome-banner {
             overflow: hidden;
             white-space: nowrap;
             position: relative;
             width: 100%;
             background-color: #ffff;
-            color: #f00b0b;
-            font-size: 2rem;
+            color: #021f02;
+            font-size: 1.5rem;
             font-weight: bold;
             padding: 10px 0;
         }
@@ -106,7 +219,7 @@
         flex-wrap: wrap;
 }
         .profile-card {
-        background-color: hsl(0, 98%, 51%);
+        background-color: #D32F2F;
         padding: 1.5rem;
         text-align: justify;
         box-shadow: 0 2px 5px rgba(248, 245, 245, 0.1);
@@ -221,7 +334,7 @@
             align-content: center;
         }
         .profile-card {
-            background-color: hsl(0, 91%, 50%);
+            background-color: #D32F2F;
             padding: 1.5rem;
             text-align: justify;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -243,16 +356,14 @@
             border-radius: 50%;
             margin: 0 auto 1rem;/* Center the image and add margin below */
             display: block; /* Make the image a block-level element */
-            justify-content: center;
-            
-
+            justify-content: center;   
         }
          h2{
-            color: #05922f;
+            color: #05922f; 
         }
 
         footer {
-            background-color: hsl(0, 98%, 51%);;
+            background-color: #D32F2F;;
             color: white;
             text-align: center;
             padding: 0;
@@ -267,14 +378,31 @@
     <header>
         <img src="IMG-20241211-WA0004.jpg" alt="TOPAN Logo">
         <h1>Tomatoes and Orchard Producers Association of Nigeria (TOPAN)</h1>
+        <div class="menu-icon">☰</div> <!-- Mobile menu icon -->
     </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="#events">Events</a>
-        <a href="#contact">Contact</a>
-        <a href="payment.html">Payment</a>
+   
+    <nav class="menu-bar">
+        <ul>
+            <li>    
+                <a href="#home"><i class="fa fa-home"></i> Home</a>
+            </li>
+            <li>
+                <a href="about.html"><i class="fa fa-info-circle"></i> About Us</a>
+            </li>
+            <li>
+                <a href="#events"><i class="fa fa-calendar"></i> Events</a>
+            </li>
+            <li>
+                <a href="#contact"><i class="fa fa-phone"></i> Contact</a>
+            </li>
+            <li>
+                <a href="payment.html"><i class="fa fa-bank"></i> Payment</a>
+            </li>
+        </ul>
     </nav>
+    <header>
+    </header>
+    <hr> <!-- This adds a horizontal line -->
     <div class="welcome-banner">
         <div class="welcome-text">Welcome to The 2nd National Tomato Conference in Nigeria 2025!</div>
     </div>
@@ -358,20 +486,12 @@
                         Statistics/Computer Science. Passionate in building career in Education, Agriculture and IT development. Clear set objectives to enhance my skills in Business development and strategic planning and handling of data processing equipment in a constructive and productive manner.  For extensive experience </p>
                 </div>
             <div class="profile-card">
-                <img src="image8.png" alt="Benue Coordinator Image">
-                <h3>Mr Enoch Agbangya</h3>
-                <p><strong>Benue Coordinator</strong></p>
-                <p>Mr Enoch Agbangya has a degree in  B.Sc. 
-                    Forestry,  Christian Rural Development 
-                    Association of Nigeria (CRUDAN),Disaster 
-                    Management Workshop, Vocational training of 
-                    Youth and women in Tomato Production, 
-                    Processing and Marketing organized by 
-                    Federal Ministry of Agric in collaboration with 
-                    MDGs Nigeria ,                                                             
-                    E-Learning International Workshop, 
-                    Organized by Centre for Food technology and 
-                    Research (CEFTER) Sponsored by The World Bank, Basic Leadership Training.</p>
+                <img src="jigawa.jpeg" alt="Jigawa Coordinator Image">
+                <h3>Mr Musa Dahiru Maigoro</h3>
+                <p><strong>Jigawa State Coordinator</strong></p>
+                <p>Mr Musa Dahiru Maigoro is the state Coordinator for Jigawa,
+                    He is an agro expert with over 10 years of experience in the field of agricultural 
+                </p>
         </div>
         </div>
     </div>
@@ -422,6 +542,14 @@
             currentIndex = (currentIndex + 1) % images.length;
             images[currentIndex].classList.add('active');
         }, 3000);
-    </script>
+        
+    document.querySelector(".menu-icon").addEventListener("click", function () {
+    document.querySelector(".menu-bar").classList.toggle("show");
+    document.querySelector("about").classList.toggle("show");
+    document.querySelector("events").classList.toggle("show");
+    document.querySelector("contact").classList.toggle("show");
+    document.querySelector("payment").classList.toggle("show");
+});
+</script>
 </body>
 </html>
